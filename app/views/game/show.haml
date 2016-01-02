@@ -1,0 +1,8 @@
+%table
+  - @map.each do |row|
+    %tr
+      - row.each do |cell|
+        - if cell.blank?
+          %td &nbsp;
+        - else
+          %td= link_to cell, "/game/42/actions/#{cell}", method: :post
