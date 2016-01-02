@@ -1,8 +1,9 @@
 %table
   - @map.each do |row|
     %tr
-      - row.each do |cell|
-        - if cell.blank?
+      - row.each do |city|
+        - if city.blank?
           %td &nbsp;
         - else
-          %td= link_to cell, "/game/42/actions/#{cell}", method: :post
+          %td{class: "city #{city.color}"}
+            = link_to city.name, "/game/42/actions/#{city.name}", method: :post

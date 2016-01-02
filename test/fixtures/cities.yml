@@ -1,0 +1,95 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+london:
+  name: London
+  y: 0
+  x: 2
+  color: blue
+  connections: "Essen,Paris,Madrid,New York"
+essen:
+  name: Essen
+  y: 0
+  x: 4
+  color: blue
+  connections: "St Petersburg,Milan,Paris,London"
+montreal:
+  name: Montreal
+  y: 1
+  x: 0
+  color: blue
+  connections: "New York,Washington,Chicago"
+new_york:
+  name: New York
+  y: 1
+  x: 1
+  color: blue
+  connections: "Madrid,Washington,Montreal,London"
+madrid:
+  name: Madrid
+  y: 1
+  x: 2
+  color: blue
+  connections: "Paris,Algiers,Sao Paulo,New York,London"
+paris:
+  name: Essen
+  y: 1
+  x: 3
+  color: blue
+  connections: "Essen,Milan,Madrid,London"
+milan:
+  name: Milan
+  y: 1
+  x: 4
+  color: blue
+  connections: "Istanbul,Paris,Essen"
+st_petersburg:
+  name: St Petersburg
+  y: 1
+  x: 5
+  color: blue
+  connections: "Moscow,Istanbul,Essen"
+atlanta:
+  name: Atlanta
+  y: 2
+  x: 0
+  color: blue
+  connections: "Washington,Miami,Chicago"
+washington:
+  name: Washington
+  y: 2
+  x: 1
+  color: blue
+  connections: "Miami,Atlanta,Montreal,New York"
+chicago:
+  name: Chicago
+  y: 8
+  x: 0
+  color: blue
+  connections: "San Francisco,Montreal,Atlanta,Mexico City,Los Angeles"
+san_francisco:
+  name: San Fancisco
+  y: 9
+  x: 1
+  color: blue
+  connections: "Manila,Tokyo,Chicago,Los Angeles"
+
+algiers:
+  name: Algiers
+  y: 2
+  x: 3
+  color: black
+  connections: "Istanbul,Cairo,Madrid"
+
+lagos:
+  name: Lagos
+  y: 3
+  x: 2
+  color: yellow
+  connections: "Buenos Aires,Bogota,Madrid,Lagos"
+
+jakarta:
+  name: Jakarta
+  y: 7
+  x: 2
+  color: red
+  connections: "Bangkok,Ho Chi Minh City,Sydney,Chennai"

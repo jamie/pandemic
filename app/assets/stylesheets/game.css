@@ -16,3 +16,23 @@ td {
   vertical-align: middle;
   width: 14%; /* 1/7 */
 }
+
+td a {
+  color: white;
+}
+
+td.blue {
+  background-color: #5E69A3;
+}
+
+td.black {
+  background-color: #2F3335;
+}
+
+td.yellow {
+  background-color: #CCC001;
+}
+
+td.red {
+  background-color: #E74E2C;
+}

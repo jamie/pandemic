@@ -1,15 +1,9 @@
-class City
-  attr_accessor :name, :connections, :x, :y
-  cattr_accessor :all
-
-  def initialize(name, x, y, connections=[])
-    self.name = name
-    self.x = x
-    self.y = y
-    self.connections = connections
-
-    self.class.all ||= {}
-    self.class.all[name] = self
+class City < ApplicationRecord
+  def self.all_by_grid
+    empty = (0...10).to_a.map{ [nil] * 7 }
+    all.inject(empty) do |grid, city|
+      grid[city.y][city.x] = city
+      grid
+    end
   end
-
 end

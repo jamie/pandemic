@@ -1,5 +1,7 @@
 require 'test_helper'
 
-
-class CityTest < Minitest::Test
+class CityTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
