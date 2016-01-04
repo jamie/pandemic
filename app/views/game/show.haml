@@ -1,9 +1,12 @@
 %table
-  - @map.each do |row|
+  - @grid.each_with_index do |row, y|
     %tr
-      - row.each do |city|
+      - row.each_with_index do |city, x|
         - if city.blank?
           %td &nbsp;
         - else
           %td{class: "city #{city.color}"}
-            = link_to city.name, "/game/42/actions/#{city.name}", method: :post
+            = link_to city.name, "/game/42/actions/#{city.id}", method: :post
+            - @players.select{|player| player.x == x && player.y == y}.each do |player|
+              %br
+              = player.role
