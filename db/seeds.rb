@@ -99,3 +99,10 @@ Role.create(name: "First Responder")
 Role.create(name: "Gene Splicer")
 Role.create(name: "Pharmacist")
 Role.create(name: "Veterinarian") # Requires Hinterlands Challenge
+
+## Players
+
+# dummy game, for demos
+Player.create(x: 0, y: 2, role: Role.find_by_name('Medic'))
+Player.create(x: 0, y: 2, role: Role.find_by_name('Scientist'))
+Player.create(x: 0, y: 2, role: Role.find_by_name('Dispatcher'))
