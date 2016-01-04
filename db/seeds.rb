@@ -33,24 +33,24 @@ City.create(name: "Sao Paulo", y: 4, x: 1, color: "yellow", connections: "Buenos
 City.create(name: "Kinshasa", y: 4, x: 2, color: "yellow", connections: "Johannesburg,Lagos")
 City.create(name: "Khartoum", y: 4, x: 3, color: "yellow", connections: "Johannesburg,Lagos,Cairo")
 City.create(name: "Riyadh", y: 4, x: 4, color: "black", connections: "Baghdad,Karachi,Cairo")
-City.create(name: "Baghdad", y: 4, x: 5, color: "black", connections: "Tehran,Karachi,Riyadh,Cairo,Istanbul" # -Karachi)
+City.create(name: "Baghdad", y: 4, x: 5, color: "black", connections: "Tehran,Karachi,Riyadh,Cairo,Istanbul") # -Karachi
 
 City.create(name: "Bogota", y: 5, x: 1, color: "yellow", connections: "Buenos Aires,Lima,Mexico City,Miami,Sao Paulo")
-City.create(name: "Buenos Aires", y: 5, x: 2, color: "yellow", connections: "Bogota,Sao Paulo" # +Johannesburg, +Santiago)
-City.create(name: "Johannesburg", y: 5, x: 3, color: "yellow", connections: "Kinshasa,Khartoum" # +Buenos Aires)
+City.create(name: "Buenos Aires", y: 5, x: 2, color: "yellow", connections: "Bogota,Sao Paulo") # +Johannesburg, +Santiago
+City.create(name: "Johannesburg", y: 5, x: 3, color: "yellow", connections: "Kinshasa,Khartoum") # +Buenos Aires
 City.create(name: "Mumbai", y: 5, x: 4, color: "black", connections: "Karachi,Delhi,Chennai")
-City.create(name: "Karachi", y: 5, x: 5, color: "black", connections: "Tehran,Delhi,Mumbai,Riyadh,Baghdad" # -Baghdad)
+City.create(name: "Karachi", y: 5, x: 5, color: "black", connections: "Tehran,Delhi,Mumbai,Riyadh,Baghdad") # -Baghdad
 City.create(name: "Tehran", y: 5, x: 6, color: "black", connections: "Delhi,Karachi,Baghdad,Moscow")
 
 City.create(name: "Mexico City", y: 6, x: 0, color: "yellow", connections: "Lima,Los Angeles,Chicago,Miami,Bogota")
-City.create(name: "Lima", y: 6, x: 1, color: "yellow", connections: "Santiago,Mexico City,Bogota" # +Los Angeles)
-City.create(name: "Santiago", y: 6, x: 2, color: "yellow", connections: "Lima" # +Buenos Aires)
-City.create(name: "Chennai", y: 6, x: 3, color: "black", connections: "Delhi,Kolkata,Bangkok,Jakarta,Mumbai" # -Bangkok)
+City.create(name: "Lima", y: 6, x: 1, color: "yellow", connections: "Santiago,Mexico City,Bogota") # +Los Angeles
+City.create(name: "Santiago", y: 6, x: 2, color: "yellow", connections: "Lima") # +Buenos Aires
+City.create(name: "Chennai", y: 6, x: 3, color: "black", connections: "Delhi,Kolkata,Bangkok,Jakarta,Mumbai") # -Bangkok
 City.create(name: "Delhi", y: 6, x: 5, color: "black", connections: "Kolkata,Chennai,Mumbai,Karachi,Tehran")
 
-City.create(name: "Los Angeles", y: 7, x: 1, color: "yellow", connections: "Sydney,San Francisco,Chicago,Mexico City" # +Lima)
+City.create(name: "Los Angeles", y: 7, x: 1, color: "yellow", connections: "Sydney,San Francisco,Chicago,Mexico City") # +Lima
 City.create(name: "Jakarta", y: 7, x: 2, color: "red", connections: "Bangkok,Sydney,Chennai")
-City.create(name: "Bangkok", y: 7, x: 3, color: "red", connections: "Kolkata,Hong Kong,Ho Chi Minh City,Jakarta,Chennai" # -Chennai)
+City.create(name: "Bangkok", y: 7, x: 3, color: "red", connections: "Kolkata,Hong Kong,Ho Chi Minh City,Jakarta,Chennai") # -Chennai
 City.create(name: "Kolkata", y: 7, x: 4, color: "black", connections: "Hong Kong,Bangkok,Chennai,Delhi")
 City.create(name: "Beijing", y: 7, x: 6, color: "red", connections: "Seoul,Shanghai")
 
