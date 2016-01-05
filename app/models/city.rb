@@ -6,4 +6,8 @@ class City < ApplicationRecord
       grid
     end
   end
+
+  def connected?(other)
+    connections.split(",").include? other.name
+  end
 end
