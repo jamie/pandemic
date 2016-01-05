@@ -7,6 +7,6 @@
         - else
           %td{class: "city #{city.color}"}
             = link_to city.name, "/games/42/actions?city=#{city.id}", method: :post
-            - @players.select{|player| player.x == x && player.y == y}.each do |player|
+            - @players.select{|player| player.city == city }.each do |player|
               %br
               = player.role.name

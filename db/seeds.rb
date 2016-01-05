@@ -103,6 +103,6 @@ Role.create(name: "Veterinarian") # Requires Hinterlands Challenge
 ## Players
 
 # dummy game, for demos
-Player.create(x: 0, y: 2, role: Role.find_by_name('Medic'))
-Player.create(x: 0, y: 2, role: Role.find_by_name('Scientist'))
-Player.create(x: 0, y: 2, role: Role.find_by_name('Dispatcher'))
+Player.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Medic'))
+Player.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Scientist'))
+Player.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Dispatcher'))
