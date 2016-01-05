@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
 
-  resources :games
+  resources :games, only: [:show] do
+    resources :actions, only: [:create]
+  end
 end
