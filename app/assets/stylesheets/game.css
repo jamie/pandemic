@@ -11,10 +11,10 @@ table {
 
 td {
   border: 1px solid black;
-  height: 130px; /* just big enough for my nexus 5 */
+  height: 100px; /* just big enough for my nexus 5 */
   text-align: center;
   vertical-align: middle;
-  width: 14%; /* 1/7 */
+  width: 12%; /* 1/8 */
 }
 
 td a {
