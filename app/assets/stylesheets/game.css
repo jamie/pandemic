@@ -11,7 +11,7 @@ table {
 
 td {
   border: 1px solid black;
-  height: 100px; /* just big enough for my nexus 5 */
+  height: 105px; /* 112 is just big enough for my nexus 5 */
   text-align: center;
   vertical-align: middle;
   width: 12%; /* 1/8 */
