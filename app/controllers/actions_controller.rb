@@ -7,6 +7,6 @@ class ActionsController < ApplicationController
       player.update_attributes(city: city)
       game.act!
     end
-    redirect_to :back
+    redirect_back fallback_location: game_path(game)
   end
 end
