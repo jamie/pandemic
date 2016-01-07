@@ -6,7 +6,7 @@
           %td &nbsp;
         - else
           %td{class: "city #{city.color}"}
-            = link_to city.name, "/games/#{@game.id}/actions?city=#{city.id}", method: :post
+            = link_to city.name, game_actions_path(@game.id, city: city.id), method: :post
             - @players.select{|player| player.city == city }.each do |player|
               %br
               - if player.current?
