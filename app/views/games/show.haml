@@ -9,4 +9,7 @@
             = link_to city.name, "/games/42/actions?city=#{city.id}", method: :post
             - @players.select{|player| player.city == city }.each do |player|
               %br
-              = player.role.name
+              - if player.current?
+                %strong= player.role.name
+              - else
+                = player.role.name
