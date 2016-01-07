@@ -5,7 +5,7 @@ class GamesController < ApplicationController
 
   def show
     @grid = City.all_by_grid
-    @game = Game.first
+    @game = Game.find(params[:id])
     @players = @game.players.all
     render
   end

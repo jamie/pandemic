@@ -1,6 +1,6 @@
 class ActionsController < ApplicationController
   def create
-    game = Game.first
+    game = Game.find(params[:game_id])
     city = City.find(params[:city])
     player = game.current_player
     if player.city.connected? city
