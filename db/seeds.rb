@@ -124,8 +124,10 @@ Role.create(name: "Gene Splicer")
 Role.create(name: "Pharmacist")
 Role.create(name: "Veterinarian") # Requires Hinterlands Challenge
 
-## Players
-# dummy game, for demos
-Player.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Medic'))
-Player.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Scientist'))
-Player.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Dispatcher'))
+
+## dummy game
+game = Game.create
+game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Medic'))
+game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Scientist'))
+game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Dispatcher'))
+game.start!
