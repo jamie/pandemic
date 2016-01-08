@@ -1,5 +1,7 @@
 class Game < ApplicationRecord
   has_many :players
+  has_many :viri
+
   belongs_to :current_player, class_name: "Player"
 
   def start!
@@ -11,10 +13,18 @@ class Game < ApplicationRecord
   def act!
     self.current_action += 1
     if current_action > current_player.actions
+      infect!
       self.current_action = 1
       players = self.players.to_a
       self.current_player = players[(players.index(current_player) + 1) % players.count]
     end
     save
+  end
+
+  def infect!
+    2.times do
+      city = City.all.to_a[rand(City.count)]
+      viri.create(city: city, color: city.color)
+    end
   end
 end
