@@ -6,6 +6,8 @@ class ActionsController < ApplicationController
     if player.city.connected? city
       player.update_attributes(city: city)
       game.act!
+    elsif player.city == city
+      game.treat!(city)
     end
     redirect_back fallback_location: game_path(game)
   end

@@ -27,4 +27,10 @@ class Game < ApplicationRecord
       viri.create(city: city, color: city.color)
     end
   end
+
+  def treat!(city)
+    return nil if viri.where(city: city).none?
+    viri.where(city: city).first.destroy
+    act!
+  end
 end
