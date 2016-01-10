@@ -6,13 +6,16 @@
           %td &nbsp;
         - else
           %td{class: "city #{city.color}"}
-            = link_to city.name, game_actions_path(@game.id, city: city.id), method: :post
-            - @game.viri.where(city: city).each do |virus|
-              .virus
+            .players
+              - @players.select{|player| player.city == city }.each do |player|
+                %br
+                - if player.current?
+                  %strong= player.role.name
+                - else
+                  = player.role.name
+
+            %p= link_to city.name, game_actions_path(@game.id, city: city.id), method: :post
+
+            .virus
+              - @game.viri.where(city: city).each do |virus|
                 = image_tag "#{virus.color}.png"
-            - @players.select{|player| player.city == city }.each do |player|
-              %br
-              - if player.current?
-                %strong= player.role.name
-              - else
-                = player.role.name
