@@ -36,3 +36,8 @@ td.yellow {
 td.red {
   background-color: #E74E2C;
 }
+
+.virus img {
+  width: 30px;
+  height: 30px;
+}
