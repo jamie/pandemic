@@ -10,4 +10,8 @@ class Player < ApplicationRecord
   def current?
     game.current_player == self
   end
+
+  def image_url
+    role.image_url
+  end
 end
