@@ -94,35 +94,36 @@ tall_grid.each_with_index do |row, y|
 end
 
 ### Pandemic
-Role.create(name: "Contingency Planner")
-Role.create(name: "Dispatcher")
-Role.create(name: "Medic") # Alternate rules for Superbug Challenge (SOE)
-Role.create(name: "Operations Expert")
-Role.create(name: "Quarantine Specialist")
-Role.create(name: "Researcher") # Alternate rules for ITL Challenge (ITL)
-Role.create(name: "Scientist")
+Role.create(color: "52BBCE", name: "Contingency Planner")
+Role.create(color: "D187A8", name: "Dispatcher")
+Role.create(color: "E88F47", name: "Medic") # Alternate rules for Superbug Challenge (SOE)
+Role.create(color: "7BBB66", name: "Operations Expert")
+Role.create(color: "3D8769", name: "Quarantine Specialist")
+Role.create(color: "AB835A", name: "Researcher") # Alternate rules for ITL Challenge (ITL)
+Role.create(color: "CDD7D4", name: "Scientist")
 
 ### On the Brink
-Role.create(name: "Archivist")
-Role.create(name: "Bio-Terrorist") # Requires Bio-Terrorist Challenge
-Role.create(name: "Containment Specialist")
-Role.create(name: "Epidemiologist") # Alternate rules for ITL Challenge (ITL)
-Role.create(name: "Field Operative")
-Role.create(name: "Generalist")
-Role.create(name: "Troubleshooter")
+Role.create(color: "3476AC", name: "Archivist")
+Role.create(color: "575958", name: "Bio-Terrorist") # Requires Bio-Terrorist Challenge
+Role.create(color: "CFCAA5", name: "Containment Specialist")
+Role.create(color: "D2B2A1", name: "Epidemiologist") # Alternate rules for ITL Challenge (ITL)
+Role.create(color: "DFE170", name: "Field Operative")
+Role.create(color: "99A1A0", name: "Generalist")
+Role.create(color: "D6443C", name: "Troubleshooter")
 
 ### In the Lab
-Role.create(name: "Field Director")
-Role.create(name: "Local Liaison")
-Role.create(name: "Pilot")
-Role.create(name: "Virologist")
+Role.create(color: "abcdef", name: "CDC")
+Role.create(color: "97386F", name: "Field Director")
+Role.create(color: "D6A0B1", name: "Local Liaison")
+Role.create(color: "5DBBCE", name: "Pilot")
+Role.create(color: "4AA574", name: "Virologist")
 
 ### State of Emergency
-Role.create(name: "Colonel") # Requires Quarantines
-Role.create(name: "First Responder")
-Role.create(name: "Gene Splicer")
-Role.create(name: "Pharmacist")
-Role.create(name: "Veterinarian") # Requires Hinterlands Challenge
+Role.create(color: "ffffff", name: "Colonel") # Requires Quarantines
+Role.create(color: "ffffff", name: "First Responder")
+Role.create(color: "ffffff", name: "Gene Splicer")
+Role.create(color: "ffffff", name: "Pharmacist")
+Role.create(color: "ffffff", name: "Veterinarian") # Requires Hinterlands Challenge
 
 
 ## dummy game
