@@ -15,34 +15,27 @@ td {
   text-align: center;
   vertical-align: middle;
   width: 12%; /* 1/8 */
+
+  p { margin: 0; }
+  a { color: white; }
+  &.blue   { background-color: #5E69A3; }
+  &.black  { background-color: #2F3335; }
+  &.yellow { background-color: #CCC001; }
+  &.red    { background-color: #E74E2C; }
 }
 
-td a {
-  color: white;
-}
-
-td.blue {
-  background-color: #5E69A3;
-}
-
-td.black {
-  background-color: #2F3335;
-}
-
-td.yellow {
-  background-color: #CCC001;
-}
-
-td.red {
-  background-color: #E74E2C;
-}
-
-.virus img {
-  width: 30px;
+.virus {
   height: 30px;
+  img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
-.players img {
-  width: 30px;
+.players {
   height: 40px;
+  img {
+    width: 30px;
+    height: 40px;
+  }
 }
