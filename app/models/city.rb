@@ -1,4 +1,6 @@
 class City < ApplicationRecord
+  validates_uniqueness_of :abbr
+
   def self.all_by_grid
     empty = (0...12).to_a.map{ [nil] * 8 }
     all.inject(empty) do |grid, city|

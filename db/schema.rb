@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20160108071025) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
+    t.string   "abbr"
     t.integer  "x"
     t.integer  "y"
     t.string   "color"
