@@ -1,20 +1,30 @@
-%table
-  - @grid.each_with_index do |row, y|
-    %tr
-      - row.each_with_index do |city, x|
-        - if city.blank?
-          %td &nbsp;
+.board
+  %table
+    - @grid.each_with_index do |row, y|
+      %tr
+        - row.each_with_index do |city, x|
+          - if city.blank?
+            %td &nbsp;
+          - else
+            %td{class: "city #{city.color}"}
+              .players
+                - @players.select{|player| player.city == city }.each do |player|
+                  - if player.current?
+                    = image_tag player.image_url, class: 'current', title: player.role.name
+                  - else
+                    = image_tag player.image_url, title: player.role.name
+
+              %p= link_to city.name, game_actions_path(@game.id, city: city.id), method: :post
+
+              .virus
+                - @game.viri.where(city: city).each do |virus|
+                  = image_tag "#{virus.color}.png", title: virus.color.capitalize
+.card.card-block.player-card
+  %h3 Players
+  %table
+    - @players.each do |player|
+      %tr
+        - if player.current?
+          %td.role.current= player.role.name
         - else
-          %td{class: "city #{city.color}"}
-            .players
-              - @players.select{|player| player.city == city }.each do |player|
-                - if player.current?
-                  = image_tag player.image_url, class: 'current', title: player.role.name
-                - else
-                  = image_tag player.image_url, title: player.role.name
-
-            %p= link_to city.name, game_actions_path(@game.id, city: city.id), method: :post
-
-            .virus
-              - @game.viri.where(city: city).each do |virus|
-                = image_tag "#{virus.color}.png", title: virus.color.capitalize
+          %td.role= player.role.name

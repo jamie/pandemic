@@ -10,25 +10,27 @@
   max-width: 5000px;
 }
 
-table {
-  width: 100%;
-  height: 100%;
-  border-collapse: collapse;
-}
+.board {
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
 
-td {
-  border: 1px solid black;
-  height: 105px; /* 112 is just big enough for my nexus 5 */
-  text-align: center;
-  vertical-align: middle;
-  width: 12%; /* 1/8 */
+    td {
+      border: 1px solid black;
+      height: 105px; /* 112 is just big enough for my nexus 5 */
+      text-align: center;
+      vertical-align: middle;
+      width: 12%; /* 1/8 */
 
-  p { margin: 0; }
-  a { color: black; }
-  &.blue   { background-color: #8485FF; }
-  &.black  { background-color: #D6D3DA; }
-  &.yellow { background-color: #FFF678; }
-  &.red    { background-color: #FF5B59; }
+      p { margin: 0; }
+      a { color: black; }
+      &.blue   { background-color: #8485FF; }
+      &.black  { background-color: #D6D3DA; }
+      &.yellow { background-color: #FFF678; }
+      &.red    { background-color: #FF5B59; }
+    }
+  }
 }
 
 .virus {
@@ -44,5 +46,26 @@ td {
   img {
     width: 30px;
     height: 40px;
+  }
+}
+
+.player-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24.8%;
+  height: 210px;
+  z-index: 2;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+ 
+  td.role {
+    text-align: right;
+  }
+  td.current {
+    font-weight: bold;
   }
 }
