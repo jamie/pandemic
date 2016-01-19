@@ -44,7 +44,6 @@
 .players {
   height: 40px;
   img {
-    width: 30px;
     height: 40px;
   }
 }
@@ -64,6 +63,11 @@
  
   td.role {
     text-align: right;
+    img {
+      height: 1em;
+      position: relative;
+      top: -3px;
+    }
   }
   td.current {
     font-weight: bold;

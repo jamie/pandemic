@@ -9,10 +9,7 @@
             %td{class: "city #{city.color}"}
               .players
                 - @players.select{|player| player.city == city }.each do |player|
-                  - if player.current?
-                    = image_tag player.image_url, class: 'current', title: player.role.name
-                  - else
-                    = image_tag player.image_url, title: player.role.name
+                  = render partial: 'players/pawn', locals: {player: player}
 
               %p= link_to city.name, game_actions_path(@game.id, city: city.id), method: :post
 
@@ -25,6 +22,10 @@
     - @players.each do |player|
       %tr
         - if player.current?
-          %td.role.current= player.role.name
+          %td.role.current
+            = player.role.name
+            = render partial: 'players/pawn', locals: {player: player}
         - else
-          %td.role= player.role.name
+          %td.role
+            = player.role.name
+            = render partial: 'players/pawn', locals: {player: player}
