@@ -136,3 +136,40 @@ game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name(
 game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Scientist'))
 game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Dispatcher'))
 game.start!
+
+City.each do |city|
+  Card.create(card_type: "Infection", name: city.name)
+end
+
+City.each do |city|
+  Card.create(card_type: "City", name: city.name)
+end
+
+Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
+
+Card.create(card_type: "Event", set: "Core", name: "Airlift")
+Card.create(card_type: "Event", set: "Core", name: "One Quiet Night")
+Card.create(card_type: "Event", set: "Core", name: "Forecast")
+Card.create(card_type: "Event", set: "Core", name: "Government Grant")
+Card.create(card_type: "Event", set: "Core", name: "Resilient Population")
+
+Card.create(card_type: "Event", set: "OTB", name: "Commercial Travel Ban")
+Card.create(card_type: "Event", set: "OTB", name: "Special Orders")
+Card.create(card_type: "Event", set: "OTB", name: "Rapid Vaccine Deployment")
+Card.create(card_type: "Event", set: "OTB", name: "Mobile Hospital")
+Card.create(card_type: "Event", set: "OTB", name: "New Assignment")
+Card.create(card_type: "Event", set: "OTB", name: "Borrowed Time")
+Card.create(card_type: "Event", set: "OTB", name: "Re-Examined Research")
+Card.create(card_type: "Event", set: "OTB", name: "Remote Treatment")
+
+Card.create(card_type: "Event", set: "ITL", name: "Infection Zone Ban")
+Card.create(card_type: "Event", set: "ITL", name: "Improved Sanitation")
+Card.create(card_type: "Event", set: "ITL", name: "Sequencing Breakthroughs")
+
+Card.create(card_type: "Event", set: "SOE", name: "Emergency Response")
+Card.create(card_type: "Event", set: "SOE", name: "Advance Team")
+Card.create(card_type: "Event", set: "SOE", name: "Local Initiative")
+Card.create(card_type: "Event", set: "SOE", name: "Resource Planning")
+Card.create(card_type: "Event", set: "SOE", name: "Sample Delivery")
+Card.create(card_type: "Event", set: "SOE", name: "Emergency Conference")
+Card.create(card_type: "Event", set: "SOE", name: "Infection Rumor")
