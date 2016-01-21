@@ -137,14 +137,21 @@ game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name(
 game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Dispatcher'))
 game.start!
 
-City.each do |city|
+# Core game cards
+
+City.all.each do |city|
   Card.create(card_type: "Infection", name: city.name)
 end
 
-City.each do |city|
+City.all.each do |city|
   Card.create(card_type: "City", name: city.name)
 end
 
+Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
+Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
+Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
+Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
+Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
 Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
 
 Card.create(card_type: "Event", set: "Core", name: "Airlift")
@@ -153,23 +160,54 @@ Card.create(card_type: "Event", set: "Core", name: "Forecast")
 Card.create(card_type: "Event", set: "Core", name: "Government Grant")
 Card.create(card_type: "Event", set: "Core", name: "Resilient Population")
 
-Card.create(card_type: "Event", set: "OTB", name: "Commercial Travel Ban")
-Card.create(card_type: "Event", set: "OTB", name: "Special Orders")
-Card.create(card_type: "Event", set: "OTB", name: "Rapid Vaccine Deployment")
-Card.create(card_type: "Event", set: "OTB", name: "Mobile Hospital")
-Card.create(card_type: "Event", set: "OTB", name: "New Assignment")
-Card.create(card_type: "Event", set: "OTB", name: "Borrowed Time")
-Card.create(card_type: "Event", set: "OTB", name: "Re-Examined Research")
-Card.create(card_type: "Event", set: "OTB", name: "Remote Treatment")
+# On the Brink
 
-Card.create(card_type: "Event", set: "ITL", name: "Infection Zone Ban")
-Card.create(card_type: "Event", set: "ITL", name: "Improved Sanitation")
-Card.create(card_type: "Event", set: "ITL", name: "Sequencing Breakthroughs")
+# TODO: Mutation/Superbug, confirm In The Lab
 
-Card.create(card_type: "Event", set: "SOE", name: "Emergency Response")
-Card.create(card_type: "Event", set: "SOE", name: "Advance Team")
-Card.create(card_type: "Event", set: "SOE", name: "Local Initiative")
-Card.create(card_type: "Event", set: "SOE", name: "Resource Planning")
-Card.create(card_type: "Event", set: "SOE", name: "Sample Delivery")
-Card.create(card_type: "Event", set: "SOE", name: "Emergency Conference")
-Card.create(card_type: "Event", set: "SOE", name: "Infection Rumor")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Chronic Effect")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Complex Molecular Structure")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Government Interference")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Hidden Pocket")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Rate Effect")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Slippery Slope")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Unacceptable Loss")
+Card.create(card_type: "Epidemic", set: "Virulent Strain", name: "Epidemic! Uncounted Populations")
+
+Card.create(card_type: "Event", set: "OTB Events", name: "Commercial Travel Ban")
+Card.create(card_type: "Event", set: "OTB Events", name: "Special Orders")
+Card.create(card_type: "Event", set: "OTB Events", name: "Rapid Vaccine Deployment")
+Card.create(card_type: "Event", set: "OTB Events", name: "Mobile Hospital")
+Card.create(card_type: "Event", set: "OTB Events", name: "New Assignment")
+Card.create(card_type: "Event", set: "OTB Events", name: "Borrowed Time")
+Card.create(card_type: "Event", set: "OTB Events", name: "Re-Examined Research")
+Card.create(card_type: "Event", set: "OTB Events", name: "Remote Treatment")
+
+# In the Lab
+
+Card.create(card_type: "Epidemic", set: "ITL Virulent Strain", name: "Epidemic! Resistant to Treatment")
+Card.create(card_type: "Epidemic", set: "ITL Virulent Strain", name: "Epidemic! ??")
+
+Card.create(card_type: "Event", set: "ITL Events", name: "Infection Zone Ban")
+Card.create(card_type: "Event", set: "ITL Events", name: "Improved Sanitation")
+Card.create(card_type: "Event", set: "ITL Events", name: "Sequencing Breakthroughs")
+
+# State of Emergency
+
+Card.create(card_type: "Event", set: "SOE Events", name: "Emergency Response")
+Card.create(card_type: "Event", set: "SOE Events", name: "Advance Team")
+Card.create(card_type: "Event", set: "SOE Events", name: "Local Initiative")
+Card.create(card_type: "Event", set: "SOE Events", name: "Resource Planning")
+Card.create(card_type: "Event", set: "SOE Events", name: "Sample Delivery")
+Card.create(card_type: "Event", set: "SOE Events", name: "Emergency Conference")
+Card.create(card_type: "Event", set: "SOE Events", name: "Infection Rumor")
+
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "CDC Planes Grounded")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Containment Failure")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Disease Hot Spot")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Disease Zones Expand")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Limited Options")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Logistics Failure")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Patient Zero")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Sanitation Breakdown")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Time Runs Out")
+Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Widespread Panic")
