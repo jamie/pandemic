@@ -21,16 +21,13 @@ class Game < ApplicationRecord
 
   def act!
     self.current_action += 1
-    if current_action > current_player.actions
-      end_of_turn!
-    end
+    end_of_turn! if current_action > current_player.actions
     save
   end
 
   def end_of_turn!
     infect!
     self.current_action = 1
-
     players = self.players.to_a
     self.current_player = players[(players.index(current_player) + 1) % players.count]
   end

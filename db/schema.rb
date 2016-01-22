@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160122033649) do
   end
 
   create_table "decks", force: :cascade do |t|
+    t.integer  "game_id"
     t.string   "name"
     t.string   "draw"
     t.string   "discard"
