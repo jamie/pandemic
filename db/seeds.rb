@@ -130,13 +130,6 @@ Role.create(color: "ffffff", name: "Pharmacist")
 Role.create(color: "ffffff", name: "Veterinarian") # Requires Hinterlands Challenge
 
 
-## dummy game
-game = Game.create
-game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Medic'))
-game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Scientist'))
-game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Dispatcher'))
-game.start!
-
 # Core game cards
 
 City.all.each do |city|
@@ -146,9 +139,6 @@ end
 City.all.each do |city|
   Card.create(card_type: "City", name: city.name)
 end
-
-Deck.create(game: game, name: "Infection", draw: Card.where(card_type: "Infection").map(&:id))
-Deck.create(game: game, name: "Player", draw: Card.where(card_type: "City").map(&:id))
 
 Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
 Card.create(card_type: "Epidemic", set: "Core", name: "Epidemic!")
@@ -214,3 +204,14 @@ Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Patien
 Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Sanitation Breakdown")
 Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Time Runs Out")
 Card.create(card_type: "Emergency Event", set: "Emergency Events", name: "Widespread Panic")
+
+## dummy game
+game = Game.create
+game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Medic'))
+game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Scientist'))
+game.players.create(city: City.find_by_name('Atlanta'), role: Role.find_by_name('Dispatcher'))
+
+Deck.create(game: game, name: "Infection", draw: Card.where(card_type: "Infection").map(&:id))
+Deck.create(game: game, name: "Player", draw: Card.where(card_type: "City").map(&:id))
+
+game.start!
