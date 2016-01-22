@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120045009) do
+ActiveRecord::Schema.define(version: 20160122033649) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20160120045009) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "decks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "draw"
+    t.string   "discard"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "games", force: :cascade do |t|
     t.integer  "current_player_id"
     t.integer  "current_action"
@@ -43,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160120045009) do
     t.integer  "game_id"
     t.integer  "city_id"
     t.integer  "role_id"
+    t.string   "cards"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

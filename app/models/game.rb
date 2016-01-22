@@ -1,8 +1,17 @@
 class Game < ApplicationRecord
   has_many :players
   has_many :viri
+  has_many :decks
 
   belongs_to :current_player, class_name: "Player"
+
+  def player_deck
+    decks.where(name: "Player").first
+  end
+
+  def infection_deck
+    decks.where(name: "Infection").first
+  end
 
   def start!
     self.current_player = players.first

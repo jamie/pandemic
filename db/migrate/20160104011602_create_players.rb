@@ -4,6 +4,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.integer :game_id
       t.integer :city_id
       t.integer :role_id
+      t.string :cards
 
       t.timestamps
     end

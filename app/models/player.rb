@@ -3,6 +3,12 @@ class Player < ApplicationRecord
   belongs_to :city
   belongs_to :role
 
+  serialize :cards
+
+  before_create do
+    self.cards ||= []
+  end
+
   def actions
     4
   end
