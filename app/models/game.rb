@@ -16,6 +16,10 @@ class Game < ApplicationRecord
   def start!
     self.current_player = players.first
     self.current_action = 1
+    players.each do |player|
+      player.draw!(player_deck.draw!)
+      player.draw!(player_deck.draw!)
+    end
     save
   end
 
@@ -26,10 +30,16 @@ class Game < ApplicationRecord
   end
 
   def end_of_turn!
+    draw!
     infect!
     self.current_action = 1
     players = self.players.to_a
     self.current_player = players[(players.index(current_player) + 1) % players.count]
+  end
+
+  def draw!
+    current_player.draw!(player_deck.draw!)
+    current_player.draw!(player_deck.draw!)
   end
 
   def infect!
