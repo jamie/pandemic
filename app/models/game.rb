@@ -34,8 +34,10 @@ class Game < ApplicationRecord
 
   def infect!
     2.times do
-      city = City.all.to_a[rand(City.count)]
+      city_id = infection_deck.draw!
+      city = City.find(city_id)
       viri.create(city: city, color: city.color)
+      infection_deck.discard!(city_id)
     end
   end
 

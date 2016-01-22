@@ -8,4 +8,12 @@ class Deck < ApplicationRecord
     self.draw ||= []
     self.discard ||= []
   end
+
+  def draw!
+    draw.shift.tap{ save }
+  end
+
+  def discard!(card_id)
+    discard.unshift(card_id).tap { save }
+  end
 end
