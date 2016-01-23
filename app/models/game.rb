@@ -16,7 +16,16 @@ class Game < ApplicationRecord
   def start!
     player_deck.shuffle!
     infection_deck.shuffle!
-    
+
+    3.downto(1) do |virus_count|
+      3.times do
+        card_id = infection_deck.draw!
+        city = City.find_by_name(Card.find(card_id).name)
+        virus_count.times { viri.create(city: city, color: city.color) }
+        infection_deck.discard!(card_id)
+      end
+    end
+
     self.current_player = players.first
     self.current_action = 1
     players.each do |player|
