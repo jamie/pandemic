@@ -16,4 +16,14 @@ class Deck < ApplicationRecord
   def discard!(card_id)
     discard.unshift(card_id).tap { save }
   end
+
+  def shuffle!
+    self.draw = self.draw.shuffle
+    save
+  end
+
+  def shuffle_discards!
+    self.discard = self.discard.shuffle
+    save
+  end
 end

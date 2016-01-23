@@ -14,6 +14,9 @@ class Game < ApplicationRecord
   end
 
   def start!
+    player_deck.shuffle!
+    infection_deck.shuffle!
+    
     self.current_player = players.first
     self.current_action = 1
     players.each do |player|
