@@ -73,3 +73,13 @@
     font-weight: bold;
   }
 }
+
+.cards {
+  span {
+    padding: 2px;
+  }
+  .blue   { background-color: #8485FF; }
+  .black  { background-color: #D6D3DA; }
+  .yellow { background-color: #FFF678; }
+  .red    { background-color: #FF5B59; }
+}
