@@ -6,7 +6,7 @@
           - if city.blank?
             %td &nbsp;
           - else
-            %td{class: "city #{city.color}"}
+            %td{class: "city #{city.color} #{'can-travel' if @players.detect(&:current?).city.connected?(city)}"}
               .players
                 - @players.select{|player| player.city == city }.each do |player|
                   = render partial: 'players/pawn', locals: {player: player}
