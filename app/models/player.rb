@@ -29,4 +29,8 @@ class Player < ApplicationRecord
     end
     save
   end
+
+  def can_travel?(city)
+    self.city.connected?(city)
+  end
 end
