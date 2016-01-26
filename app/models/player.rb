@@ -31,6 +31,11 @@ class Player < ApplicationRecord
   end
 
   def can_travel?(city)
-    self.city.connected?(city)
+    return false if city == self.city
+    return true if self.city.connected?(city)
+    city_cards = Card.find(cards)
+    return true if city_cards.map(&:name).include? self.city.name
+    return true if city_cards.map(&:name).include? city.name
+    false
   end
 end
