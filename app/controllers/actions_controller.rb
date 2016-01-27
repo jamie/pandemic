@@ -4,7 +4,7 @@ class ActionsController < ApplicationController
     city = City.find(params[:city])
     player = game.current_player
     if player.can_travel? city
-      player.update_attributes(city: city)
+      player.travel_to(city)
       game.act!
     elsif player.city == city
       game.treat!(city)

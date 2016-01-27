@@ -30,12 +30,36 @@ class Player < ApplicationRecord
     save
   end
 
-  def can_travel?(city)
+  def has_city_card?(city)
+    city_cards = Card.find(cards)
+    city_cards.map(&:name).include? city.name
+  end
+
+  def travel_to(city)
+    if can_drive?(city)
+      # Drive/Ferry
+      self.city = city
+    elsif has_city_card?(city)
+      # Fly in
+      self.cards.delete(city.player_card.id)
+      self.city = city
+    elsif has_city_card?(self.city)
+      # Fly out
+      self.cards.delete(self.city.player_card.id)
+      self.city = city
+    end
+    save
+  end
+
+  def can_drive?(city)
     return false if city == self.city
     return true if self.city.connected?(city)
-    city_cards = Card.find(cards)
-    return true if city_cards.map(&:name).include? self.city.name
-    return true if city_cards.map(&:name).include? city.name
+  end
+
+  def can_travel?(city)
+    return true if can_drive?(city)
+    return true if has_city_card?(self.city)
+    return true if has_city_card?(city)
     false
   end
 end

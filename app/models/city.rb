@@ -12,4 +12,8 @@ class City < ApplicationRecord
   def connected?(other)
     connections.split(",").include? other.name
   end
+
+  def player_card
+    Card.where(card_type: "City", name: self.name).first
+  end
 end
