@@ -25,8 +25,8 @@ class Player < ApplicationRecord
     role.image_url
   end
 
-  def draw!(card_id)
-    self.card_ids.push(card_id)
+  def draw!(card)
+    self.card_ids.push(card.id)
     # Temoprary. This should involve player interaction.
     while self.card_ids.size > 7
       self.card_ids.shift

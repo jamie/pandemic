@@ -10,11 +10,13 @@ class Deck < ApplicationRecord
   end
 
   def draw!
-    draw.shift.tap{ save }
+    card_id = draw.shift
+    save
+    Card.find(card_id)
   end
 
-  def discard!(card_id)
-    discard.unshift(card_id).tap { save }
+  def discard!(card)
+    discard.unshift(card.id).tap { save }
   end
 
   def shuffle!
