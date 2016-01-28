@@ -30,7 +30,6 @@
             = player.role.name
             = render partial: 'players/pawn', locals: {player: player}
         %td.cards
-          - player.cards.each do |card_id|
-            - card = Card.find(card_id)
+          - player.cards.each do |card|
             - if city = City.find_by_name(card.name)
               %span{class: "#{city.color}"}= city.abbr

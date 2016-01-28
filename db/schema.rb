@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160122033649) do
     t.integer  "game_id"
     t.integer  "city_id"
     t.integer  "role_id"
-    t.string   "cards"
+    t.string   "card_ids"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

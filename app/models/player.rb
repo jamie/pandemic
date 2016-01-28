@@ -3,10 +3,14 @@ class Player < ApplicationRecord
   belongs_to :city
   belongs_to :role
 
-  serialize :cards
+  serialize :card_ids
 
   before_create do
-    self.cards ||= []
+    self.card_ids ||= []
+  end
+
+  def cards
+    card_ids.map{|id| Card.find(id) }
   end
 
   def actions
@@ -22,17 +26,16 @@ class Player < ApplicationRecord
   end
 
   def draw!(card_id)
-    self.cards.push(card_id)
+    self.card_ids.push(card_id)
     # Temoprary. This should involve player interaction.
-    while self.cards.size > 7
-      self.cards.shift
+    while self.card_ids.size > 7
+      self.card_ids.shift
     end
     save
   end
 
   def has_city_card?(city)
-    city_cards = Card.find(cards)
-    city_cards.map(&:name).include? city.name
+    cards.map(&:name).include? city.name
   end
 
   def travel_to(city)
@@ -41,11 +44,11 @@ class Player < ApplicationRecord
       self.city = city
     elsif has_city_card?(city)
       # Fly in
-      self.cards.delete(city.player_card.id)
+      self.card_ids.delete(city.player_card.id)
       self.city = city
     elsif has_city_card?(self.city)
       # Fly out
-      self.cards.delete(self.city.player_card.id)
+      self.card_ids.delete(self.city.player_card.id)
       self.city = city
     end
     save

@@ -56,10 +56,10 @@ class Game < ApplicationRecord
 
   def infect!
     2.times do
-      city_id = infection_deck.draw!
-      city = City.find(city_id)
+      card_id = infection_deck.draw!
+      city = City.find_by_name(Card.find(card_id).name)
       viri.create(city: city, color: city.color)
-      infection_deck.discard!(city_id)
+      infection_deck.discard!(card_id)
     end
   end
 
