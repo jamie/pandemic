@@ -28,10 +28,14 @@ class Player < ApplicationRecord
   def draw!(card)
     self.card_ids.push(card.id)
     # Temoprary. This should involve player interaction.
-    while self.card_ids.size > 7
-      self.card_ids.shift
-    end
+    discard! while self.card_ids.size > 7
     save
+  end
+
+  def discard!
+    # TODO: Place card in player deck's discard pile
+    # TODO: Human player chooses card
+    self.card_ids.shift
   end
 
   def has_city_card?(city)
